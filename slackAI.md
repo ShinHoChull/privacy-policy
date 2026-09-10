@@ -1,5 +1,4 @@
-한눈에 보는 시스템 아키텍처 (Architecture Diagram)
-
+```mermaid
 flowchart TB
     subgraph Client["사용자 인터페이스"]
         User(["개발자 (슬랙/모바일)"])
@@ -12,7 +11,7 @@ flowchart TB
         SessionMgr["AgentSessionManager\n(채널별 프로젝트 컨텍스트 분리)"]
         Gemini["Google Gemini 3.6 Flash\n(Tool/Function Calling)"]
         PM["ProjectManager\n(안전장치 & Git 작업 통제)"]
-        
+
         Main --> SessionMgr
         SessionMgr --> Gemini
         Gemini <-->|"Tool 호출 / 결과 반환"| PM
